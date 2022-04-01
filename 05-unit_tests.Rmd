@@ -1,0 +1,31 @@
+
+## Add Unit Tests
+
+* Testing is a vital part of package development. 
+
+* It ensures that your code does what you want it to do. 
+
+* Testing adds an additional step to your development workflow.
+
+* We will use the {testthat} package for all our unit testing.
+
+---
+## Add Unit Tests
+
+* Run `usethis::use_test("foo")` to add a unit testing file
+
+  ```r
+  usethis::use_test("foo")
+  #> √ Creating 'tests/testthat/'
+  #> √ Writing 'tests/testthat.R'
+  #> √ Writing 'tests/testthat/test-foo.R'
+  #> * Modify 'tests/testthat/test-foo.R'
+  ```
+
+* The {testthat} package has MANY functions for testing your function. Here are the ones I use most often:
+  - `expect_error()` can test for the presence (or lack) of an error
+  - `expect_message()` tests whether the function prints a message (can also test the text of the message)
+  - `expect_equal()` test your function's return result equals a specified value
+  - `expect_true()` checks expression evaluates to `TRUE`
+  
+* Each test should have an informative name and cover a single unit of functionality. The idea is that when a test fails, you’ll know what’s wrong and where in your code to look for the problem.

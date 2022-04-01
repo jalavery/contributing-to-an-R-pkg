@@ -1,0 +1,81 @@
+---
+title: "Everything You Wanted to Know About Contributing to an R Pkg"
+subtitle: "But Were Too Afraid to Ask"
+author: "Daniel D. Sjoberg"
+date: "April 4, 2022"
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, custom.css, my-theme.css]
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+
+set.seed(78987)
+library(xaringanthemer)
+library(tidyverse)
+library(cowplot)
+
+style_mono_accent(
+  base_color = mskRvis::msk_palette("main")[1]
+)
+
+# xaringan::inf_mr() 
+options(htmltools.dir.version = FALSE) 
+```
+
+```{r xaringanExtra-freezeframe, echo=FALSE}
+xaringanExtra::use_freezeframe()
+```
+
+class: inverse, center, title-slide, middle
+
+# Everything You Wanted to Know About Contributing to an R Package
+
+## *But Were Too Afraid to Ask*
+
+### Daniel D. Sjoberg
+
+#### April 4, 2022
+
+
+<p align="center"><img src="Images/White-Transparent.png" width=30%></p>
+
+.medium[
+`r icons::fontawesome("twitter") %>% icons::icon_style(fill = "#FFFFFF")` @statistishdan
+
+`r icons::fontawesome("github")  %>% icons::icon_style(fill = "#FFFFFF")` @ddsjoberg
+]
+
+---
+```{r child='01-background.Rmd'}
+```
+
+---
+```{r child='02-getting_started.Rmd'}
+```
+
+---
+```{r child='03-roxygen.Rmd'}
+```
+
+---
+```{r child='04-style.Rmd'}
+```
+
+---
+```{r child='05-unit_tests.Rmd'}
+```
+
+<!-- --- -->
+<!-- ```{r child='07-additional-material.Rmd'} -->
+<!-- ``` -->

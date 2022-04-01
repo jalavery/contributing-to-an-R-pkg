@@ -1,0 +1,51 @@
+
+## Getting Ready
+
+Before you can contribute to a package, you need to get your system setup for development.
+
+1. If it's been a while since you updated R/RStudio, take the time to update now.
+
+1. Install and configure git (if you haven't already). https://github.mskcc.org/pages/datadojo/mskRutils/articles/git_config.html#git-setup
+
+1. Configure your GitHub Personal Access Token (PAT). Remember that Enterprise GitHub and public GitHub require two different PATs. Details here https://github.mskcc.org/pages/datadojo/mskRutils/articles/git_config.html#pat
+
+1. Install the following packages
+
+  ```r
+  install.packages(c("devtools", "roxygen2", "testthat", "knitr", "styler"))
+  ```
+
+1. Using Windows? Install RTools. https://cran.r-project.org/bin/windows/Rtools/
+
+1. Using macOS? Install Xcode.
+
+  ```shell
+  xcode-select --install
+  ```
+  
+---
+## Write a Function
+  
+1. If you're adding a new function to a package, the code for the function will generally live in its own `.R` file by the same name. Run `usethis::use_r("foo")` and a blank script file will be added to the R folder. 
+  
+  ```r
+  usethis::use_r("foo")
+  #> √ Setting active project to 'C:/Users/SjobergD/GitHub/contributing-to-an-R-pkg'
+  #> √ Creating 'R/'
+  #> * Modify 'R/foo.R'
+  #> * Call `use_test()` to create a matching test file
+  ```
+  
+1. Write your function!
+
+  ```r
+  foo <- function(x) {
+    # check input is numeric
+    stopifnot(is.numeric(x))
+    
+    # return the mean
+    mean(x)
+  }
+  ```
+  
+1. When writing function that utilize {tidyverse} functions, be sure to use the `.data` and `.env` prefixes. Review these slides for details [https://mskcc-epi-bio.github.io/Writing-Function-with-the-tidyverse/](https://mskcc-epi-bio.github.io/Writing-Function-with-the-tidyverse/)

@@ -1,0 +1,6 @@
+
+## Anatomy of an R Package
+
+```{r, echo = FALSE}
+fs::dir_tree(here::here("toy.pkg"))
+```
