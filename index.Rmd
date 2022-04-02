@@ -76,6 +76,10 @@ class: inverse, center, title-slide, middle
 ```{r child='05-unit_tests.Rmd'}
 ```
 
-<!-- --- -->
-<!-- ```{r child='07-additional-material.Rmd'} -->
-<!-- ``` -->
+---
+```{r child='06-checks.Rmd'}
+```
+
+---
+```{r child='07-pull_request.Rmd'}
+```

@@ -29,3 +29,14 @@
   - `expect_true()` checks expression evaluates to `TRUE`
   
 * Each test should have an informative name and cover a single unit of functionality. The idea is that when a test fails, you’ll know what’s wrong and where in your code to look for the problem.
+
+---
+## Code Coverage
+
+After writing your unit tests, calculate the coverage for your new function.
+
+```r
+withr::with_envvar(new = c("NOT_CRAN" = "true"), covr::report())
+```
+
+Aim for 100% coverage of any addition you've made, and add unit tests as needed until you're there!

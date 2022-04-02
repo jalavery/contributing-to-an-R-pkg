@@ -166,6 +166,30 @@ Before you can contribute to a package, you need to get your system setup for de
   ```
   
 ---
+## Fork + Clone + Branch
+
+.xlarge[
+* Most R Package source code is kept on GitHub
+
+* Navigate to the package's GitHub page
+  - Fork the repository
+  - Clone the forked repository from your personal GH page to your local machine
+  - Create a _new_ branch to work on where you will add your function
+  - Review the training materials for details on forking + cloning + branching [https://github.mskcc.org/datadojo/git_resources/tree/master/training/2022%2003%20Epi-Biostats%20Git%20Trainings](https://github.mskcc.org/datadojo/git_resources/tree/master/training/2022%2003%20Epi-Biostats%20Git%20Trainings)
+]
+
+---
+## Install Package Dependencies
+
+.xlarge[
+- Each package has dependencies: packages that another package relies upon.
+- Before you can contribute to a package, you must install that package _and_ all it's dependencies.
+- There are different kinds of dependencies, and the most common are `Imports` (packages required to install the package) and `Suggests` (packages required to build the package, including packages used in documentation, vignettes, and unit testing).
+- Before you can contribute to a package, you need to install _all_ of its dependencies.
+- Open the package R project in RStudio, and run `renv::install()`; this will install all the dependencies.
+]
+
+---
 ## Write a Function
   
 1. If you're adding a new function to a package, the code for the function will generally live in its own `.R` file by the same name. Run `usethis::use_r("foo")` and a blank script file will be added to the R folder. 
@@ -313,9 +337,96 @@ foo &lt;- function(x) {
   
 * Each test should have an informative name and cover a single unit of functionality. The idea is that when a test fails, you’ll know what’s wrong and where in your code to look for the problem.
 
-&lt;!-- --- --&gt;
-&lt;!-- ```{r child='07-additional-material.Rmd'} --&gt;
-&lt;!-- ``` --&gt;
+---
+## Code Coverage
+
+After writing your unit tests, calculate the coverage for your new function.
+
+```r
+withr::with_envvar(new = c("NOT_CRAN" = "true"), covr::report())
+```
+
+Aim for 100% coverage of any addition you've made, and add unit tests as needed until you're there!
+
+---
+
+
+## R CMD Checks
+
+![](Images/check.png)
+&lt;br&gt;
+--
+What is checked? Here's a very abbreviated list
+.pull-left[
+* package structure
+  - hidden files/folders
+  - portable file names
+  - executable files
+  - package subdirectories
+  - left-over files
+
+* DESCRIPTION/NAMESPACE file    
+  - package dependencies
+  - files exist
+  - NAMESPACE parses properly
+]
+.pull-right[
+* R code
+  - non-ASCII characters
+  - syntax errors
+  - dependencies in R code
+  - S3 generic/method consistency
+  
+* documentation
+  - Rd/help files
+  - Rd file metadata
+  - examples
+  - undocumented function arguments
+]
+
+---
+## Checks
+
+Review results and check there are zero errors, warnings, and notes.
+
+![](Images/r-cmd-check.png)
+&lt;br&gt;A common note is about undefined global variables. This most often occurs when using {dplyr} verbs without the `.data` prefix.
+
+.pull-left[
+```r
+# bad syntax
+mtcars |&gt; mutate(mpg10 = mpg * 10)
+```
+]
+.pull-right[
+```r
+# good syntax
+mtcars |&gt; mutate(mpg10 = .data$mpg * 10)
+```
+]
+
+
+![](Images/global-variable.png)
+
+
+---
+
+
+## Anatomy of an R Package
+
+
+```
+## C:/Users/SjobergD/GitHub/contributing-to-an-R-pkg/toy.pkg
+## +-- DESCRIPTION
+## +-- man
+## |   \-- foo.Rd
+## +-- NAMESPACE
+## +-- R
+## |   \-- foo.R
+## \-- tests
+##     \-- testthat
+##         \-- test-foo.R
+```
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

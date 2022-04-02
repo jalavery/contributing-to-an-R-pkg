@@ -24,6 +24,30 @@ Before you can contribute to a package, you need to get your system setup for de
   ```
   
 ---
+## Fork + Clone + Branch
+
+.xlarge[
+* Most R Package source code is kept on GitHub
+
+* Navigate to the package's GitHub page
+  - Fork the repository
+  - Clone the forked repository from your personal GH page to your local machine
+  - Create a _new_ branch to work on where you will add your function
+  - Review the training materials for details on forking + cloning + branching [https://github.mskcc.org/datadojo/git_resources/tree/master/training/2022%2003%20Epi-Biostats%20Git%20Trainings](https://github.mskcc.org/datadojo/git_resources/tree/master/training/2022%2003%20Epi-Biostats%20Git%20Trainings)
+]
+
+---
+## Install Package Dependencies
+
+.xlarge[
+- Each package has dependencies: packages that another package relies upon.
+- Before you can contribute to a package, you must install that package _and_ all it's dependencies.
+- There are different kinds of dependencies, and the most common are `Imports` (packages required to install the package) and `Suggests` (packages required to build the package, including packages used in documentation, vignettes, and unit testing).
+- Before you can contribute to a package, you need to install _all_ of its dependencies.
+- Open the package R project in RStudio, and run `renv::install()`; this will install all the dependencies.
+]
+
+---
 ## Write a Function
   
 1. If you're adding a new function to a package, the code for the function will generally live in its own `.R` file by the same name. Run `usethis::use_r("foo")` and a blank script file will be added to the R folder. 
