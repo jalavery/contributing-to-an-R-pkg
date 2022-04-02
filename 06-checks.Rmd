@@ -56,3 +56,17 @@ mtcars |> mutate(mpg10 = .data$mpg * 10)
 
 ![](Images/global-variable.png)
 
+---
+## Spell Check
+
+.pull-left[
+One last check...the spell check!
+
+```r
+usethis::use_spell_check()
+```
+]
+.pull-right[
+<img src = "Images/all-done.gif" alt = "animated" width = "5%">
+]
+

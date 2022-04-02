@@ -83,3 +83,16 @@ class: inverse, center, title-slide, middle
 ---
 ```{r child='07-pull_request.Rmd'}
 ```
+
+---
+## Let's Practice
+
+.pull-left[.xxlarge[
+We'll now walk through an example by submitting a pull request to the {tidycmprsk} package. [https://github.com/MSKCC-Epi-Bio/tidycmprsk](https://github.com/MSKCC-Epi-Bio/tidycmprsk)
+
+Any questions before we begin?
+]]
+.pull-right[
+![](Images/octocat-teacher.png)
+]
+

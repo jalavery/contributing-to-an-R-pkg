@@ -1,6 +1,7 @@
 
 ## Add Unit Tests
 
+.xlarge[
 * Testing is a vital part of package development. 
 
 * It ensures that your code does what you want it to do. 
@@ -8,6 +9,7 @@
 * Testing adds an additional step to your development workflow.
 
 * We will use the {testthat} package for all our unit testing.
+]
 
 ---
 ## Add Unit Tests

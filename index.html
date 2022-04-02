@@ -308,6 +308,7 @@ foo &lt;- function(x) {
 
 ## Add Unit Tests
 
+.xlarge[
 * Testing is a vital part of package development. 
 
 * It ensures that your code does what you want it to do. 
@@ -315,6 +316,7 @@ foo &lt;- function(x) {
 * Testing adds an additional step to your development workflow.
 
 * We will use the {testthat} package for all our unit testing.
+]
 
 ---
 ## Add Unit Tests
@@ -408,25 +410,68 @@ mtcars |&gt; mutate(mpg10 = .data$mpg * 10)
 
 ![](Images/global-variable.png)
 
+---
+## Spell Check
+
+.pull-left[
+One last check...the spell check!
+
+```r
+usethis::use_spell_check()
+```
+]
+.pull-right[
+&lt;img src = "Images/all-done.gif" alt = "animated" width = "5%"&gt;
+]
+
 
 ---
 
 
-## Anatomy of an R Package
+## Submit Pull Request
 
+You're almost there! Time to submit your change for acceptance into the main package repository.
 
-```
-## C:/Users/SjobergD/GitHub/contributing-to-an-R-pkg/toy.pkg
-## +-- DESCRIPTION
-## +-- man
-## |   \-- foo.Rd
-## +-- NAMESPACE
-## +-- R
-## |   \-- foo.R
-## \-- tests
-##     \-- testthat
-##         \-- test-foo.R
-```
+When you submit a Pull Request
+- The R CMD Checks will be run on Linux, Windows, and macOS
+- The R CMD Checks will be run on multiple versions of R
+
+ Click the Create Pull Request button in GitHub Desktop
+ 
+![](Images/windows-create-pull-request.png)
+
+.footnote[These additional checks may not be run on Enterprise GitHub repositories.]
+
+---
+## Pull Request Checklist
+
+Most package repositories for the Epi/Biostat Dept have a pull request checklist. 
+Be sure to review each item of the checklist before asking the package maintainer to review your pull request.
+
+Example from {gtsummary}
+
+- [ ] Ensure all package dependencies are installed by running `renv::install()`
+- [ ] PR branch has pulled the most recent updates from master branch. Ensure the pull request branch and your local version match and both have the latest updates from the master branch.
+- [ ] If an update was made to `tbl_summary()`, was the same change implemented for `tbl_svysummary()`?
+- [ ] If a new function was added, function included in `_pkgdown.yml`
+- [ ] If a bug was fixed, a unit test was added for the bug check
+- [ ] Run `pkgdown::build_site()`. Check the R console for errors, and review the rendered website.
+- [ ] Code coverage is suitable for any new functions/features. Review coverage with `withr::with_envvar(new = c("NOT_CRAN" = "true"), covr::report())`. Begin in a fresh R session without any packages loaded. 
+- [ ] R CMD Check runs without errors, warnings, and notes
+- [ ] `usethis::use_spell_check()` runs with no spelling errors in documentation
+
+---
+## Let's Practice
+
+.pull-left[.xxlarge[
+We'll now walk through an example by submitting a pull request to the {tidycmprsk} package. [https://github.com/MSKCC-Epi-Bio/tidycmprsk](https://github.com/MSKCC-Epi-Bio/tidycmprsk)
+
+Any questions before we begin?
+]]
+.pull-right[
+![](Images/octocat-teacher.png)
+]
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
