@@ -47,7 +47,7 @@ class: inverse, center, title-slide, middle
 .xxlarge[
 1. Anatomy of an R Package
 1. Preparing to Contribute
-1. Fork+Clone
+1. Fork + Clone + Branch
 1. Write/Modify a Function
 1. Document function/changes
 1. Style your contribution
@@ -57,6 +57,16 @@ class: inverse, center, title-slide, middle
 ]
 
 _We will cover how to contribute to an R package whose source code lives on **GitHub**_
+
+---
+## Other Resources
+
+.pull-left[
+[![](Images/r-packages-cover.png)](https://r-pkgs.org/)
+]
+.pull-right[
+[![](Images/ropensci-packages-cover.png)](https://devguide.ropensci.org/)
+]
 
 ---
 ## Anatomy of an R Package
@@ -143,23 +153,23 @@ importFrom(magrittr,"%&gt;%")
 
 ## Getting Ready
 
-Before you can contribute to a package, you need to get your system setup for development.
+Before you can contribute to a package, you need to **get your system setup** for development.
 
-1. If it's been a while since you updated R/RStudio, take the time to update now.
+1. If it's been a while, take the time to **update R and RStudio**.
 
-1. Install and configure git (if you haven't already). https://github.mskcc.org/pages/datadojo/mskRutils/articles/git_config.html#git-setup
+1. **Install and configure git** (if you haven't already). https://github.mskcc.org/pages/datadojo/mskRutils/articles/git_config.html#git-setup
 
-1. Configure your GitHub Personal Access Token (PAT). Remember that Enterprise GitHub and public GitHub require two different PATs. Details here https://github.mskcc.org/pages/datadojo/mskRutils/articles/git_config.html#pat
+1. **Configure your GitHub Personal Access Token (PAT)**. Remember that Enterprise GitHub and public GitHub require two different PATs. Details here https://github.mskcc.org/pages/datadojo/mskRutils/articles/git_config.html#pat
 
-1. Install the following packages
+1. **Install** the following packages
 
   ```r
   install.packages(c("devtools", "roxygen2", "testthat", "knitr", "styler"))
   ```
 
-1. Using Windows? Install RTools. https://cran.r-project.org/bin/windows/Rtools/
+1. Using Windows? **Install RTools**. https://cran.r-project.org/bin/windows/Rtools/
 
-1. Using macOS? Install Xcode.
+1. Using macOS? **Install Xcode**.
 
   ```shell
   xcode-select --install
@@ -255,7 +265,7 @@ foo &lt;- function(x) {
 
 .pull-left[
 ```r
-#' Caclulate the Mean 
+#' Calculate the Mean 
 #'
 #' @param x a numeric vector
 #'
@@ -392,7 +402,7 @@ What is checked? Here's a very abbreviated list
 Review results and check there are zero errors, warnings, and notes.
 
 ![](Images/r-cmd-check.png)
-&lt;br&gt;A common note is about undefined global variables. This most often occurs when using {dplyr} verbs without the `.data` prefix.
+&lt;br&gt;A common note is about **undefined global variables**. This most often occurs when using {dplyr} verbs without the `.data` prefix.
 
 .pull-left[
 ```r

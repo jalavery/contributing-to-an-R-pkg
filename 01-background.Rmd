@@ -3,7 +3,7 @@
 .xxlarge[
 1. Anatomy of an R Package
 1. Preparing to Contribute
-1. Fork+Clone
+1. Fork + Clone + Branch
 1. Write/Modify a Function
 1. Document function/changes
 1. Style your contribution
@@ -13,6 +13,16 @@
 ]
 
 _We will cover how to contribute to an R package whose source code lives on **GitHub**_
+
+---
+## Other Resources
+
+.pull-left[
+[![](Images/r-packages-cover.png)](https://r-pkgs.org/)
+]
+.pull-right[
+[![](Images/ropensci-packages-cover.png)](https://devguide.ropensci.org/)
+]
 
 ---
 ## Anatomy of an R Package

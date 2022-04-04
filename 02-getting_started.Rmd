@@ -1,23 +1,23 @@
 
 ## Getting Ready
 
-Before you can contribute to a package, you need to get your system setup for development.
+Before you can contribute to a package, you need to **get your system setup** for development.
 
-1. If it's been a while since you updated R/RStudio, take the time to update now.
+1. If it's been a while, take the time to **update R and RStudio**.
 
-1. Install and configure git (if you haven't already). https://github.mskcc.org/pages/datadojo/mskRutils/articles/git_config.html#git-setup
+1. **Install and configure git** (if you haven't already). https://github.mskcc.org/pages/datadojo/mskRutils/articles/git_config.html#git-setup
 
-1. Configure your GitHub Personal Access Token (PAT). Remember that Enterprise GitHub and public GitHub require two different PATs. Details here https://github.mskcc.org/pages/datadojo/mskRutils/articles/git_config.html#pat
+1. **Configure your GitHub Personal Access Token (PAT)**. Remember that Enterprise GitHub and public GitHub require two different PATs. Details here https://github.mskcc.org/pages/datadojo/mskRutils/articles/git_config.html#pat
 
-1. Install the following packages
+1. **Install** the following packages
 
   ```r
   install.packages(c("devtools", "roxygen2", "testthat", "knitr", "styler"))
   ```
 
-1. Using Windows? Install RTools. https://cran.r-project.org/bin/windows/Rtools/
+1. Using Windows? **Install RTools**. https://cran.r-project.org/bin/windows/Rtools/
 
-1. Using macOS? Install Xcode.
+1. Using macOS? **Install Xcode**.
 
   ```shell
   xcode-select --install

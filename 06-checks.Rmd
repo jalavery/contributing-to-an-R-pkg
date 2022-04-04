@@ -38,7 +38,7 @@ What is checked? Here's a very abbreviated list
 Review results and check there are zero errors, warnings, and notes.
 
 ![](Images/r-cmd-check.png)
-<br>A common note is about undefined global variables. This most often occurs when using {dplyr} verbs without the `.data` prefix.
+<br>A common note is about **undefined global variables**. This most often occurs when using {dplyr} verbs without the `.data` prefix.
 
 .pull-left[
 ```r

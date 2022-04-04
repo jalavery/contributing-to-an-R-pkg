@@ -35,7 +35,7 @@ foo <- function(x) {
 
 .pull-left[
 ```r
-#' Caclulate the Mean 
+#' Calculate the Mean 
 #'
 #' @param x a numeric vector
 #'
